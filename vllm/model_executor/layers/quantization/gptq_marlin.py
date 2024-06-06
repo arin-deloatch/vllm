@@ -164,10 +164,14 @@ class GPTQMarlinConfig(QuantizationConfig):
             return False
 
         # If the capability of the device is too low, cannot convert.
-        major, minor = torch.cuda.get_device_capability()
-        device_capability = major * 10 + minor
-        if device_capability < cls.get_min_capability():
-            return False
+        try:
+            major, minor = torch.cuda.get_device_capability()
+            device_capability = major * 10 + minor
+            if device_capability < cls.get_min_capability():
+                return False
+        except:
+            #We have a CPU
+            pass
 
         # Otherwise, can convert if model satisfies marlin constraints.
         return (num_bits in GPTQ_MARLIN_SUPPORTED_NUM_BITS
