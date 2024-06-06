@@ -1,3 +1,9 @@
+# VLLM branch for CPU runtime in Red Hat OpenShift AI
+
+To build, build the Dockerfile.cpu.
+
+
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/vllm-project/vllm/main/docs/source/assets/logos/vllm-logo-text-dark.png">
