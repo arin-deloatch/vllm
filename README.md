@@ -2,7 +2,10 @@
 
 To build, build the Dockerfile.cpu.
 
-
+It only works with FP32 and BF16 models, FP16 models get converted to BF16. Official documentation [here](https://docs.vllm.ai/en/latest/getting_started/cpu-installation.html).  
+This means that models such as [Gemma-2b-AWQ](https://huggingface.co/TechxGenus/gemma-2b-AWQ) will not work because it forces a conversion to BF16, and AWQ is currently not supported with BF16 on vLLM.  
+An example model that does work is [TinyLlama-1.1B-Chat-v1.0](https://huggingface.co/TinyLlama/TinyLlama-1.1B-Chat-v1.0).  
+</br>
 
 <p align="center">
   <picture>
