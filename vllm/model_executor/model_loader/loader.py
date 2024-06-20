@@ -57,12 +57,12 @@ def _get_quantization_config(
                     "supported for the current GPU. "
                     f"Minimum capability: {quant_config.get_min_capability()}. "
                     f"Current capability: {capability}.")
-        # supported_dtypes = quant_config.get_supported_act_dtypes()
-        # if model_config.dtype not in supported_dtypes:
-        #     raise ValueError(
-        #         f"{model_config.dtype} is not supported for quantization "
-        #         f"method {model_config.quantization}. Supported dtypes: "
-        #         f"{supported_dtypes}")
+        supported_dtypes = quant_config.get_supported_act_dtypes()
+        if model_config.dtype not in supported_dtypes:
+            raise ValueError(
+                f"{model_config.dtype} is not supported for quantization "
+                f"method {model_config.quantization}. Supported dtypes: "
+                f"{supported_dtypes}")
         return quant_config
     return None
 
