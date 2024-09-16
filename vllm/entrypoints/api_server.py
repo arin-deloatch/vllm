@@ -21,7 +21,7 @@ from vllm.sampling_params import SamplingParams
 from vllm.usage.usage_lib import UsageContext
 from vllm.utils import random_uuid
 
-TIMEOUT_KEEP_ALIVE = 5  # seconds.
+TIMEOUT_KEEP_ALIVE = 1_000  # seconds.
 app = FastAPI()
 engine = None
 

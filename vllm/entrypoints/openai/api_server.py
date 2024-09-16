@@ -30,7 +30,7 @@ from vllm.entrypoints.openai.serving_embedding import OpenAIServingEmbedding
 from vllm.logger import init_logger
 from vllm.usage.usage_lib import UsageContext
 
-TIMEOUT_KEEP_ALIVE = 5  # seconds
+TIMEOUT_KEEP_ALIVE = 1_000 # seconds
 
 openai_serving_chat: OpenAIServingChat
 openai_serving_completion: OpenAIServingCompletion
